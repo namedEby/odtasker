@@ -27,7 +27,7 @@ class AccntcrtState extends State<AccntcrtPage>{
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:<Widget>[
-                 Text("CREATE\nACCOUNT",style:TextStyle(color: Colors.green,fontWeight: FontWeight.bold,fontSize: 35)),
+                 Text("CREATE\nACCOUNT",style:TextStyle(color: Color.fromRGBO(54, 133, 105, 100),fontWeight: FontWeight.bold,fontSize: 35)),
                   SizedBox(height: 20,),
                  Text("Let's get On Demand Lifestyle Service for \nyour comfort with OD Tasker App"),
                  SizedBox(height: 20,),
@@ -211,13 +211,13 @@ class AccntcrtState extends State<AccntcrtPage>{
               ),
             ), 
             SizedBox(height: 20,),    
-            Text("Have an Account ? Sign up Now",style:TextStyle(color: Colors.green))  ,
+            Text("Have an Account ? Sign up Now",style:TextStyle(color: Color.fromRGBO(54, 133, 105, 100)))  ,
             SizedBox(height: 40,),
              Container(
               width: 85*SizeConfig.widthMultiplier,
               height: 5.8*SizeConfig.heightMultiplier,
               child:RaisedButton(
-                color:Colors.green,
+                color:Color.fromRGBO(54, 133, 105, 100),
                 onPressed:(){
                     Navigator.push(
               context, MaterialPageRoute(builder: (context) =>FirstScreen()));

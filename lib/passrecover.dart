@@ -83,7 +83,7 @@ class Passrecover extends StatelessWidget{
               width: 85*SizeConfig.widthMultiplier,
               height: 5.8*SizeConfig.heightMultiplier,
               child:RaisedButton(
-                color:Colors.green,
+                color:Color.fromRGBO(54, 133, 105, 100),
                 onPressed:(){
                     Navigator.push(
               context, MaterialPageRoute(builder: (context) =>ChangePass()));

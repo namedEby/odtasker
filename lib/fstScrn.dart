@@ -30,52 +30,54 @@ class FirstScreenState extends State<FirstScreen>{
                 Background(),
                Container(
                  margin: EdgeInsets.only(top:200,left:20,right: 20),
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: <Widget>[
-                     OpCard(),
-                     Container(
-                       margin: EdgeInsets.only(top:20,left:20),
-                       child: Text("What we can help you?",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                 child: SingleChildScrollView(
+                     child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: <Widget>[
+                       OpCard(),
+                       Container(
+                         margin: EdgeInsets.only(top:20,left:20),
+                         child: Text("What we can help you?",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
 
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.all(10.0),
-                         child: Row(
-                           children: <Widget>[
-                             RaisedButton(onPressed:(){},child:Text("ODLife")),
-                             SizedBox(width:20),
-                             RaisedButton(onPressed:(){},child:Text("ODLife")),
-                             SizedBox(width:20),
-                             RaisedButton(onPressed:(){},child:Text("ODLife")),
-                           ],
                          ),
-                       ),
-                    Container(
-                      margin: EdgeInsets.only(top:10,),
-                      child: Row(
-                        children:<Widget>[
-                         SlctCard(cardname: "Quick Fix",),
-                         SlctCard(cardname: "MarketPlace",),
-                         SlctCard(cardname: "Bidding",)
-                        ]
+                         Padding(
+                           padding: const EdgeInsets.all(10.0),
+                           child: Row(
+                             children: <Widget>[
+                               RaisedButton(onPressed:(){},child:Text("ODLife")),
+                               SizedBox(width:20),
+                               RaisedButton(onPressed:(){},child:Text("ODLife")),
+                               SizedBox(width:20),
+                               RaisedButton(onPressed:(){},child:Text("ODLife")),
+                             ],
+                           ),
+                         ),
+                      Container(
+                        margin: EdgeInsets.only(top:10,),
+                        child: Row(
+                          children:<Widget>[
+                           SlctCard(cardname: "Quick Fix",),
+                           SlctCard(cardname: "MarketPlace",),
+                           SlctCard(cardname: "Bidding",)
+                          ]
+                        ),
                       ),
+                      Container(
+                        margin: EdgeInsets.only(top:10),
+                      
+                      height: 250,
+                      child: ListView(
+                          scrollDirection:Axis.horizontal,
+                          children:<Widget>[
+                            NewsCard(assetname:"images/business.jpg",heading:"The Next Taxi" ,),
+                            SizedBox(width:10),
+                            NewsCard(assetname:"images/traffic.jpg",heading: "The Business Key",),
+                          ]
+                        ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top:10),
-                    
-                    height: 180,
-                    child: ListView(
-                        scrollDirection:Axis.horizontal,
-                        children:<Widget>[
-                          NewsCard(assetname:"images/business.jpg",heading:"The Next Taxi" ,),
-                          SizedBox(width:10),
-                          NewsCard(assetname:"images/traffic.jpg",heading: "The Business Key",),
-                        ]
-                      ),
-                  ),
-                   
-                   ],
+                     
+                     ],
+                   ),
                  )
                  ),
                   

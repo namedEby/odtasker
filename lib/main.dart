@@ -44,7 +44,7 @@ class LanguageState extends State<Language>{
          home: Scaffold(
            body:Stack(children: <Widget>[
              Container(
-               color:Colors.blueGrey,
+               color:Color.fromRGBO(54, 133, 105, 100),
                child: Center(
                  child:Container(
                    color: Colors.white,

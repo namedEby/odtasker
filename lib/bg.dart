@@ -5,7 +5,7 @@ class Background extends StatelessWidget{
   Widget build(BuildContext context) {
     
     return Container(
-      color:Colors.green,
+      color:Color.fromRGBO(54,133, 105, 100),
       height: 250,
     );
   }

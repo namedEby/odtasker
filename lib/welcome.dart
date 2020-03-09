@@ -31,7 +31,7 @@ class WelcomePageState extends State<WelcomePage>{
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green),
+                      color: Color.fromRGBO(54, 133, 105, 100)),
                       ),
                   
                   SizedBox(
@@ -46,7 +46,7 @@ class WelcomePageState extends State<WelcomePage>{
                   ),
                   Text("Log into continue this apps",style:TextStyle(
                     fontSize: 20,
-                    color: Colors.green
+                    color: Color.fromRGBO(54, 133, 105, 100)
                   )),
                   SizedBox(
                     height: 60,
@@ -79,7 +79,7 @@ class WelcomePageState extends State<WelcomePage>{
                  Text("PASSWORD",
                       style: TextStyle(color: Colors.grey),),
                  Text("Forgot Password",
-                      style: TextStyle(color: Colors.green),),
+                      style: TextStyle(color: Color.fromRGBO(54, 133, 105, 100)),),
                       
                ],
              ),
@@ -125,7 +125,7 @@ class WelcomePageState extends State<WelcomePage>{
               width: 85*SizeConfig.widthMultiplier,
               height: 5.8*SizeConfig.heightMultiplier,
               child:RaisedButton(
-                color:Colors.green,
+                color:Color.fromRGBO(54, 133, 105, 100),
                 onPressed:(){
                     Navigator.push(
               context, MaterialPageRoute(builder: (context) =>Passrecover()));
