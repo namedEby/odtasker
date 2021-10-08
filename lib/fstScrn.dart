@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:odtasker/NewsCard.dart';
+import 'package:odtasker/odcard.dart';
 import 'package:odtasker/opcard.dart';
 import 'package:odtasker/profilepic.dart';
 import 'package:odtasker/slctcard.dart';
@@ -7,6 +8,10 @@ import './Screen_Size.dart';
 import './bg.dart';
 
 import './slctcard.dart';
+import './map.dart';
+
+enum WidgetMarker {life,job,transport}
+
 class FirstScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -17,6 +22,7 @@ class FirstScreen extends StatefulWidget{
 }
 
 class FirstScreenState extends State<FirstScreen>{
+  WidgetMarker selectedwidget=WidgetMarker.life;
  
    Widget build(BuildContext context) {
     
@@ -44,22 +50,39 @@ class FirstScreenState extends State<FirstScreen>{
                            padding: const EdgeInsets.all(10.0),
                            child: Row(
                              children: <Widget>[
-                               RaisedButton(onPressed:(){},child:Text("ODLife")),
+                               RaisedButton(onPressed:(){
+                                 setState(() {
+                                 selectedwidget=WidgetMarker.life;   
+                                 });
+                                
+                                
+                               },child:Text("ODLIFE")),
                                SizedBox(width:20),
-                               RaisedButton(onPressed:(){},child:Text("ODLife")),
-                               SizedBox(width:20),
-                               RaisedButton(onPressed:(){},child:Text("ODLife")),
+                               RaisedButton(
+                                 highlightColor: Colors.lightBlue,
+                                 disabledColor: Colors.grey,
+                                 onPressed:(){
+                                 setState(() {
+                                 selectedwidget =WidgetMarker.job;
+  
+                                 });
+                                                                },
+                                  child:Text("ODJOB")),
+                               SizedBox(width:20), 
+                               RaisedButton(onPressed:(){
+                                 setState(() {
+                                 selectedwidget=WidgetMarker.transport;  
+                                 });
+                                 
+                               },child:Text("ODTRANSPORT")),
                              ],
                            ),
                          ),
-                      Container(
-                        margin: EdgeInsets.only(top:10,),
-                        child: Row(
-                          children:<Widget>[
-                           SlctCard(cardname: "Quick Fix",),
-                           SlctCard(cardname: "MarketPlace",),
-                           SlctCard(cardname: "Bidding",)
-                          ]
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                                              child: Container(
+                          margin: EdgeInsets.only(top:10,),
+                          child: getCustomContainer()
                         ),
                       ),
                       Container(
@@ -120,8 +143,68 @@ class FirstScreenState extends State<FirstScreen>{
                   ),
               ] ),  
           ),
+          
         );
       });
     });
+    
+}
+Widget getCustomContainer (){
+  switch(selectedwidget){
+    case WidgetMarker.life:
+      return life();
+    case WidgetMarker.job:
+      return job();
+    case WidgetMarker.transport:
+      return transport();
+
+  }
+
+  return null;
+}
+
+Widget life(){
+  return Container(
+    height: 100,
+    child: Row(
+      children:<Widget>[
+        GestureDetector(
+          onTap: (){
+            Navigator.push(
+              context, MaterialPageRoute(builder: (context) =>Map()));
+          },
+          child: OdCard(odcardname:"QUICK FIX")
+          ),
+        OdCard(odcardname:"MARKET PLACE"),
+        OdCard(odcardname:"BIDDING")
+      ]
+    ),
+  );
+}
+
+Widget job(){
+  return Container(
+    height: 100,
+    child: Row(
+      children:<Widget>[
+        OdCard(odcardname:"CHASIER"),
+        OdCard(odcardname:"CHEF"),
+        OdCard(odcardname:"Promoter")
+      ]
+    ),
+  );
+}
+
+Widget transport(){
+  return Container(
+    height: 100,
+    child: Row(
+      children:<Widget>[
+        OdCard(odcardname: "PASSENGER",),
+        OdCard(odcardname:"COMMERCIAL")
+      ]
+    ),
+  );
 }
 }
+

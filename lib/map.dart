@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:odtasker/Screen_Size.dart';
-import 'package:odtasker/maincard.dart';
+
+import 'package:odtasker/quickfixcard.dart';
 import './electricalcard.dart';
 
 class Map extends StatefulWidget{
@@ -27,11 +28,11 @@ class MapState extends State<Map>{
                 child:Image(image: AssetImage("images/map.jpg",),fit: BoxFit.fitHeight,) ,
                 ),
                 Positioned(
-                  top:600,
+                  top:450,
                   left: 10,
                   right: 10,
                                   child: Container(
-                    child: ElectricalCard2()),
+                    child:QuickFixCard()),
                 )
             ]
           ) 
